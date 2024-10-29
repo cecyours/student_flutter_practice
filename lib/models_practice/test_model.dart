@@ -13,9 +13,19 @@ void main() {
   //     state: SampleJson.json2['state'],
   //     country: SampleJson.json2['country']);
 
-        Model1 m = Model1.takeFromJson(json: SampleJson.json2);
-      print('value is : ${m.toJson()} ${m.country}');
+        // Model1 m = Model1.takeFromJson(json: SampleJson.json2);
+      // print('value is : ${m.toJson()} ${m.country}');
+// Model2 m = Model2.fromJson(json: SampleJson.sampleJson1);
 
+  // print('value is ${m.menu.popUp.menuItems.first.onclick}');
 
   // print('value : ${m.toJson()}');
+
+
+
+
+
+  Model3 m = Model3.fromJson(json6: SampleJson.sampleJson2);
+
+  print('value is: ${m.Emp1.emps.first.name}');
 }
