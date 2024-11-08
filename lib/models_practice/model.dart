@@ -234,7 +234,6 @@ class Address {
   }
 }
 
-
 class Widget {
   String type;
   Setting setting;
@@ -242,7 +241,8 @@ class Widget {
   Widget({required this.type, required this.setting});
 
   factory Widget.fromJson({required Map<String, dynamic> json}) {
-    return Widget(type: json['type'], setting: Setting.fromJson(json3: json['settings']));
+    return Widget(
+        type: json['type'], setting: Setting.fromJson(json3: json['settings']));
   }
 }
 
@@ -266,26 +266,19 @@ class Setting {
         sortable: json3['sortable']);
   }
 
-  Map<String, dynamic> toJson(){
+  Map<String, dynamic> toJson() {
+    List<Map<String, dynamic>> h = [];
 
-    List<Map<String,dynamic>>  h = [];
-
-    for(abc a in d1){
-      if(a is Items){
+    for (abc a in d1) {
+      if (a is Items) {
         h.add(a.toJson());
-      }else{
+      } else {
         h.add((a as Data).toJson());
       }
-
     }
 
-    return {
-      'i': h,
-      'chartType': chattype,
-      'sortable': sortable
-    };
+    return {'i': h, 'chartType': chattype, 'sortable': sortable};
   }
-
 }
 
 class abc {}
@@ -300,11 +293,8 @@ class Data extends abc {
     return Data(x: json2['x'], y: json2['y']);
   }
 
-  Map<String, dynamic> toJson(){
-    return {
-      'x':x,
-      'y':y
-    };
+  Map<String, dynamic> toJson() {
+    return {'x': x, 'y': y};
   }
 }
 
@@ -318,11 +308,7 @@ class Items extends abc {
     return Items(name: json['name'], completed: json['completed']);
   }
 
-  Map<String, dynamic> toJson(){
-    return {
-      'name':name,
-      'completed':completed
-    };
+  Map<String, dynamic> toJson() {
+    return {'name': name, 'completed': completed};
   }
-
 }
