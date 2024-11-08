@@ -21,11 +21,44 @@ void main() {
 
   // print('value : ${m.toJson()}');
 
+ // if(a is Data){
+ //   a.x;
+ // }else{
+ //   a.name;
+ // }
 
+// Model4 v = Model4.fromJson(jsonMain: SampleJson.sampleJson3);
+// print('value is ${v.dashBoard.title}');
 
+  // Items items = Items.fromJson(json: SampleJson.sampleJson3['dashboard']['widgets'][1]['settings']['items'][0]);
+  // Data data = Data.fromJson(json2: SampleJson.sampleJson3['dashboard']['widgets'][0]['settings']['data'][0]);
 
+  // Setting setting = Setting.fromJson(json3: SampleJson.sampleJson3['dashboard']['widgets'][0]['settings']);
+  // Data data = setting.d1[1] as Data;
 
-  Model3 m = Model3.fromJson(json6: SampleJson.sampleJson2);
+  DashBoard dashBoard = DashBoard.fromJson(json5: SampleJson.sampleJson3['dashboard']);
 
-  print('value is: ${m.Emp1.emps.first.name}');
+  // Items items = dashBoard.widgets[1].setting.d1[0] as Items;
+
+  // print('ok ${dashBoard.widgets[1].setting.d1}');
+
+  print(dashBoard.widgets[1].setting.toJson());
+
+  // for(abc a in dashBoard.widgets[1].setting.d1){
+  //   // print('abc is ${a.toString()}');
+  //   if(a is Items){
+  //     Items items = a;
+  //     print('${items.toJson()}');
+  //   }else{
+  //     Data data = a as Data;
+  //     print('${data.toJson()}');
+  //   }
+  // }
+
+  // print("value is ${items.toJson()}");
+
+  // print('first item : ${data.x} ${data.y} ');
+  // Model3 m = Model3.fromJson(json6: SampleJson.sampleJson2);
+  //
+  // print('value is: ${m.Emp1.emps.first.name}');
 }
