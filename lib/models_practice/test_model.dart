@@ -36,13 +36,18 @@ void main() {
   // Setting setting = Setting.fromJson(json3: SampleJson.sampleJson3['dashboard']['widgets'][0]['settings']);
   // Data data = setting.d1[1] as Data;
 
-  DashBoard dashBoard = DashBoard.fromJson(json5: SampleJson.sampleJson3['dashboard']);
+  // DashBoard dashBoard = DashBoard.fromJson(json5: SampleJson.sampleJson3['dashboard']);
+   Menu menu = Menu.fromJson(mjson: SampleJson.sampleJson4['menu']);
+
+   print('value is ${menu.popUp.menuItems[0].value}');
 
   // Items items = dashBoard.widgets[1].setting.d1[0] as Items;
 
   // print('ok ${dashBoard.widgets[1].setting.d1}');
 
-  print(dashBoard.widgets[1].setting.toJson());
+  // print(dashBoard.widgets[1].setting.toJson());
+  // print(dashBoard.toJson());
+
 
   // for(abc a in dashBoard.widgets[1].setting.d1){
   //   // print('abc is ${a.toString()}');

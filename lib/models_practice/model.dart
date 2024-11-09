@@ -180,6 +180,17 @@ class DashBoard {
             .toList(),
         lastLogin: json5['last_login']);
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'dashboard': {
+        'title': title,
+        'user': user.toJson(),
+        'widgets': widgets.map((widget) => widget.toJson()),
+        'last_login': lastLogin
+      }
+    };
+  }
 }
 
 class User {
@@ -201,6 +212,15 @@ class User {
         email: json1['email'],
         profile: Profile.fromJson(json8: json1['profile']));
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'email': email,
+      'profile': profile.toJson()
+    };
+  }
 }
 
 class Profile {
@@ -217,6 +237,14 @@ class Profile {
         preferences: json8['preferences'],
         address: Address.fromJson(json7: json8['address']));
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'age': age,
+      'preferences': preferences,
+      'address': address.toJson()
+    };
+  }
 }
 
 class Address {
@@ -232,6 +260,10 @@ class Address {
         city: json7['city'],
         zipcode: json7['zipcode']);
   }
+
+  Map<String, dynamic> toJson() {
+    return {'street': street, 'city': city, 'zipcode': zipcode};
+  }
 }
 
 class Widget {
@@ -243,6 +275,10 @@ class Widget {
   factory Widget.fromJson({required Map<String, dynamic> json}) {
     return Widget(
         type: json['type'], setting: Setting.fromJson(json3: json['settings']));
+  }
+
+  Map<String, dynamic> toJson() {
+    return {'type': type, 'settings': setting.toJson()};
   }
 }
 

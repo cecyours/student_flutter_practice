@@ -89,4 +89,37 @@ static Map<String, dynamic> sampleJson3 = {
     "last_login": "2024-10-01T08:30:00Z"
   }
 };
+
+static Map<String, dynamic> sampleJson4 = {
+    "menu": {
+      "id": "edit",
+      "value": "Edit",
+      "popup": {
+        "menuitem": [
+          {
+            "value": "Undo",
+            "onclick": "UndoAction()"
+          },
+          {
+            "value": "Redo",
+            "onclick": "RedoAction()"
+          },
+          {
+            "value": "Cut",
+            "onclick": "CutSelection()"
+          },
+          {
+            "value": "Copy",
+            "onclick": "CopySelection()"
+          },
+          {
+            "value": "Paste",
+            "onclick": "PasteSelection()"
+          }
+        ]
+      }
+    }
+  };
+
+
 }
