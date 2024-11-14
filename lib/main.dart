@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:maulesh_flutter_practice/cupertino_gesture_pratice/screen.dart';
+import 'package:maulesh_flutter_practice/provider/provider.dart';
+import 'package:maulesh_flutter_practice/provider/ui.dart';
 import 'package:maulesh_flutter_practice/theme_pratice/professional_theme.dart';
 import 'package:provider/provider.dart';
 
@@ -23,6 +25,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider<ProductProvider>(
             create: (_) => ProductProvider()),
+        ChangeNotifierProvider<Provider1>(create: (_) => Provider1()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -30,7 +33,7 @@ class MyApp extends StatelessWidget {
         theme: theme,
         darkTheme: darkTheme,
         themeMode: ThemeMode.system,
-        home: Screen(),
+        home: Ui(),
       ),
     );
   }

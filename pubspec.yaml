@@ -38,6 +38,8 @@ dependencies:
   redux: ^5.0.0
   flutter_redux: ^0.10.0
   provider: ^6.1.2
+  dio: ^5.7.0
+  http: ^1.2.2
 
 dev_dependencies:
   flutter_test:
