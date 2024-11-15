@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:maulesh_flutter_practice/cupertino_gesture_pratice/screen.dart';
 import 'package:maulesh_flutter_practice/provider/provider.dart';
 import 'package:maulesh_flutter_practice/provider/ui.dart';
@@ -6,10 +7,14 @@ import 'package:maulesh_flutter_practice/theme_pratice/professional_theme.dart';
 import 'package:provider/provider.dart';
 
 import 'app_pratice/provider/products_provider.dart';
+import 'local_storage/hive.dart';
+import 'local_storage/shared_preference.dart';
 
-void main() {
+void main() async{
   // final Fact = Store<UpdateValue>(reflectValue,
   //     initialState: UpdateValue.DefaultValue());
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
   runApp(MyApp());
 }
 
@@ -33,7 +38,7 @@ class MyApp extends StatelessWidget {
         theme: theme,
         darkTheme: darkTheme,
         themeMode: ThemeMode.system,
-        home: Ui(),
+        home: SharedPreferenceUi(),
       ),
     );
   }

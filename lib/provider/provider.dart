@@ -11,6 +11,5 @@ class Provider1 extends ChangeNotifier {
   void sub() {
     value--;
     notifyListeners();
-
   }
 }
