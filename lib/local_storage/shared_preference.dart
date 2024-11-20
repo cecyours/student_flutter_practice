@@ -62,7 +62,7 @@ class _SharedPreferenceState extends State<SharedPreferenceUi> {
 
   Future<void> _incrementValue() async {
     value++;
-    pref.setInt('key', value);
+    await pref.setInt('key', value);
     setState(() {
 
     });
@@ -70,7 +70,7 @@ class _SharedPreferenceState extends State<SharedPreferenceUi> {
 
   Future<void> _decrementValue() async {
     value--;
-    pref.setInt('key', value);
+    await pref.setInt('key', value);
     setState(() {
 
     });
