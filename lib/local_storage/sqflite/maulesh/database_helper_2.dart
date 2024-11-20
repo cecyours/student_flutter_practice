@@ -20,7 +20,7 @@ class DatabaseHelper2 {
           "CREATE TABLE products(id INTEGER PRIMARY KEY AUTOINCREMENT, newId INTEGER, name TEXT, price TEXT)");
     }, version: 1);
   }
-
+//
   Future<void> insertProduct(Product2 product) async {
     final db = await database;
     await db.insert('products', product.toJson());
