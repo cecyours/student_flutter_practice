@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:maulesh_flutter_practice/local_storage/sqflite/database_helper.dart';
 import 'package:maulesh_flutter_practice/local_storage/sqflite/maulesh/model_2.dart';
+
+import 'database_helper_2.dart';
+
 // import 'database_helper.dart';
 // import 'model.dart'; // Import the Product model
-
 
 class ProductPage1 extends StatefulWidget {
   const ProductPage1({super.key});
@@ -16,18 +18,34 @@ class ProductPage1 extends StatefulWidget {
 class _ProductPageState extends State<ProductPage1> {
   final _nameController = TextEditingController();
   final _priceController = TextEditingController();
-  final _dbHelper = DatabaseHelper();
+  final _dbHelper = DatabaseHelper2();
 
   List<Product2> _products = [];
 
   @override
   void initState() {
     super.initState();
-    // _loadProducts();
+    loadProduct();
+  }
+
+  void loadProduct() async {
+    _products = await _dbHelper.getAllProduct();
+    setState(() {});
+  }
+
+  void addProduct(int ind) async {
+    await _dbHelper.insertProduct(Product2(
+        newId: ind, name: _nameController.text, price: _priceController.text));
+
+    loadProduct();
+  }
+
+  void removeProduct(int ind) async {
+    await _dbHelper.deleteProduct(ind);
+    loadProduct();
   }
 
   // Load all products from the database
-
 
   @override
   Widget build(BuildContext context) {
@@ -51,10 +69,9 @@ class _ProductPageState extends State<ProductPage1> {
             ),
             const SizedBox(height: 20),
             ElevatedButton(
-              onPressed: (){
+              onPressed: () {
                 // addProduct(_products.length);
-                print(_nameController.text);
-                print(_priceController.text);
+                addProduct(_products.length);
               },
               child: const Text('Add Product'),
             ),
@@ -66,9 +83,11 @@ class _ProductPageState extends State<ProductPage1> {
                 itemBuilder: (context, index) {
                   final product = _products[index];
                   return ListTile(
-                    leading: IconButton(onPressed: () {
-                      // _removeProduct(index);
-                    },
+                    leading: IconButton(
+                        onPressed: () {
+                          // _removeProduct(index);
+                          removeProduct(_products[index].newId);
+                        },
                         icon: Icon(Icons.remove)),
                     title: Text(product.name),
                     subtitle: Text('\$${product.price}'),

@@ -24,6 +24,9 @@ class DatabaseHelper {
     version: 1);
   }
 
+
+   // insert
+
   Future<void> insertProduct(Product product) async {
     final db = await database;
     await db.insert(
@@ -32,6 +35,7 @@ class DatabaseHelper {
     );
   }
 
+  // get all product
   Future<List<Product>> getProducts() async {
     final db = await database;
     final List<Map<String, dynamic>> maps = await db.query('products');
@@ -40,6 +44,7 @@ class DatabaseHelper {
     });
   }
 
+   // Remove product based on index
   Future<bool> removeProduct(int index) async {
     final db = await database;
 

@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:maulesh_flutter_practice/cupertino_gesture_pratice/screen.dart';
 import 'package:maulesh_flutter_practice/local_storage/sqflite/maulesh/ui_2.dart';
+import 'package:maulesh_flutter_practice/local_storage/sqflite/ui.dart';
 import 'package:maulesh_flutter_practice/provider/provider.dart';
-import 'package:maulesh_flutter_practice/provider/ui.dart';
 import 'package:maulesh_flutter_practice/theme_pratice/professional_theme.dart';
 import 'package:provider/provider.dart';
 
 import 'app_pratice/provider/products_provider.dart';
-import 'local_storage/hive.dart';
-import 'local_storage/shared_preference.dart';
-import 'local_storage/sqflite/ui.dart';
 
 void main() async {
   // final Fact = Store<UpdateValue>(reflectValue,
@@ -23,7 +19,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   // final Store<UpdateValue> Fact;
 
-  const MyApp({super.key});
+  const MyApp({super.key});/**/
 
   // This widget is the root of your application.
   @override
