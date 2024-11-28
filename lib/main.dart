@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:maulesh_flutter_practice/cupertino_gesture_pratice/screen.dart';
 import 'package:maulesh_flutter_practice/local_storage/sqflite/maulesh/ui_2.dart';
-import 'package:maulesh_flutter_practice/local_storage/sqflite/normal_profile_project/first_screen.dart';
 import 'package:maulesh_flutter_practice/provider/provider.dart';
 import 'package:maulesh_flutter_practice/provider/ui.dart';
 import 'package:maulesh_flutter_practice/theme_pratice/professional_theme.dart';
@@ -41,7 +40,7 @@ class MyApp extends StatelessWidget {
         theme: theme,
         darkTheme: darkTheme,
         themeMode: ThemeMode.system,
-        home: FirstScreen(),
+        home: ProductPage1(),
       ),
     );
   }

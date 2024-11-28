@@ -20,17 +20,35 @@ class DatabaseHelper2 {
           "CREATE TABLE products(id INTEGER PRIMARY KEY AUTOINCREMENT, newId INTEGER, name TEXT, price TEXT)");
     }, version: 1);
   }
+
 //
   Future<void> insertProduct(Product2 product) async {
     final db = await database;
     await db.insert('products', product.toJson());
   }
 
-  Future<List<Product2>> getAllProduct() async{
+  Future<List<Product2>> getAllProduct() async {
     final db = await database;
-    final List<Map<String, dynamic>>map = await db.query('products');
-    return List.generate(map.length ,  (index){
+    final List<Map<String, dynamic>> map = await db.query('products');
+    return List.generate(map.length, (index) {
       return Product2.fromJson(json: map[index]);
     });
+  }
+
+  Future<bool> deleteProduct(int index) async {
+    final db = await database;
+    try {
+      int digit =
+          await db.rawDelete('Delete FROM products where newId = ${index}');
+
+      if (digit == -1 || digit == 0) {
+        return false;
+      } else {
+        return true;
+      }
+    } catch (e) {
+      print('Error is $e');
+      return false;
+    }
   }
 }

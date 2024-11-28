@@ -1,11 +1,11 @@
 class Product2 {
   int? id;
-  int? newId;
+  int newId;
   String name;
   String price;
 
   Product2(
-      {required this.id,
+      {this.id,
       required this.newId,
       required this.name,
       required this.price});

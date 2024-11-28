@@ -70,7 +70,7 @@ class _ProductPageState extends State<ProductPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Product App'),
+        title: const Text('Product App 123'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -102,7 +102,7 @@ class _ProductPageState extends State<ProductPage> {
                   final product = _products[index];
                   return ListTile(
                     leading: IconButton(onPressed: () {
-                      _removeProduct(index);
+                      _removeProduct(_products[index].newId);
                     },
                     icon: Icon(Icons.remove)),
                     title: Text(product.name),
