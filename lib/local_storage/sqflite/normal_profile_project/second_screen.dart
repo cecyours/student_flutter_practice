@@ -18,7 +18,7 @@ class _SecondScreenState extends State<SecondScreen> {
     // TODO: implement initState
     super.initState();
     getProfile();
-  }
+  }//
   @override
   Widget build(BuildContext context) {
     return Material(
