@@ -1,6 +1,8 @@
-import 'package:maulesh_flutter_practice/local_storage/sqflite/maulesh/model_2.dart';
+
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
+
+import 'model_2.dart';
 
 class DatabaseHelper2 {
   static Database? _database;

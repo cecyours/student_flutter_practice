@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:maulesh_flutter_practice/local_storage/sqflite/database_helper.dart';
-import 'package:maulesh_flutter_practice/local_storage/sqflite/maulesh/model_2.dart';
-
 import 'database_helper_2.dart';
+import 'model_2.dart';
 
 // import 'database_helper.dart';
 // import 'model.dart'; // Import the Product model

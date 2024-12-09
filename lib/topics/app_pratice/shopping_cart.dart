@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:maulesh_flutter_practice/app_pratice/product_cart_model.dart';
-import 'package:maulesh_flutter_practice/app_pratice/product_model.dart';
-import 'package:maulesh_flutter_practice/app_pratice/provider/products_provider.dart';
+import 'package:maulesh_flutter_practice/topics/app_pratice/product_model.dart';
+import 'package:maulesh_flutter_practice/topics/app_pratice/provider/products_provider.dart';
 import 'package:provider/provider.dart';
 
 class ShoppingCart extends StatefulWidget {

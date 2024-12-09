@@ -1,5 +1,7 @@
-import 'package:maulesh_flutter_practice/Redex_dir/function.dart';
-import 'package:maulesh_flutter_practice/Redex_dir/state_value.dart';
+
+import 'package:maulesh_flutter_practice/topics/Redex_dir/state_value.dart';
+
+import 'function.dart';
 
 UpdateValue reflectValue(UpdateValue state, dynamic action) {
   if (action is Multiplication) {

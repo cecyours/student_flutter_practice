@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:maulesh_flutter_practice/app_pratice/product_model.dart';
+import 'package:maulesh_flutter_practice/topics/app_pratice/product_model.dart';
 
 
 class CustomWidget extends StatelessWidget {

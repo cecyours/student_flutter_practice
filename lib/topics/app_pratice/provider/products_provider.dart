@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:maulesh_flutter_practice/app_pratice/product_model.dart';
+
+import '../product_model.dart';
 
 class ProductProvider extends ChangeNotifier {
   List<ProductModel> products = [

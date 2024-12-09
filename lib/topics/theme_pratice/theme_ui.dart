@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:maulesh_flutter_practice/theme_pratice/custom_theme.dart';
 
 class ThemeUi extends StatefulWidget {
   const ThemeUi({super.key});

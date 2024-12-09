@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:maulesh_flutter_practice/Redex_dir/function.dart';
-import 'package:maulesh_flutter_practice/Redex_dir/state_value.dart';
+import 'package:maulesh_flutter_practice/topics/Redex_dir/state_value.dart';
 import 'package:redux/redux.dart';
+
+import 'function.dart';
 
 class Interface extends StatelessWidget {
   @override

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maulesh_flutter_practice/provider/provider.dart';
+import 'package:maulesh_flutter_practice/topics/provider/provider.dart';
 import 'package:provider/provider.dart';
 
 class Ui extends StatefulWidget {

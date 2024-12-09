@@ -14,9 +14,10 @@ class CallingDioGet {
 
     try {
       final Response response = await dio.get(
-          'https://member.cecyours.or/api/application/home/67358f210ccfbbae39eca02b');
+          'https://member.cecyours.org/api/application/home/67358f210ccfbbae39eca02b');
 
       Map<String, dynamic> json = response.data;
+      print('full data ${response.data}');
       print('data is ${response.data['member']['member_branch_ids'][0]}');
     } catch (e) {
       print(e.runtimeType);

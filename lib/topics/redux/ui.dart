@@ -1,7 +1,7 @@
 // counter_screen.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:maulesh_flutter_practice/redux/state.dart';
+import 'package:maulesh_flutter_practice/topics/redux/state.dart';
 import 'package:redux/redux.dart';
 import 'actions.dart';
 
