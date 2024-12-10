@@ -4,7 +4,7 @@ import 'package:maulesh_flutter_practice/practice/dio_sqflite_provider/model.dar
 class CallingDio {
   Dio dio = Dio();
 
-  void getFactFromDio() async {
+  Future<FactModel> getFactFromDio() async {
     try {
       final Response response = await dio.get('https://catfact.ninja/fact');
 
@@ -12,11 +12,14 @@ class CallingDio {
         FactModel model = FactModel.fromJson(json: response.data);
         print('fact is ${model.fact}');
         print('length is ${model.factLength}');
+        return model;
       } else {
         print('Something went wrong');
+        throw Exception();
       }
     } catch (e) {
       print('error is $e');
+      throw Exception();
     }
   }
 
