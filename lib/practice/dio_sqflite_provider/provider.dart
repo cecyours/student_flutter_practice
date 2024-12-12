@@ -10,7 +10,7 @@ class GetData extends ChangeNotifier{
 
   FactModel? model;
   FactModel? modelToShow;
-  CallingDio callingDio;
+  CallingDioOrFirebase callingDio;
   DatabaseHelper4 databaseHelper2 = DatabaseHelper4();
   GetData({required this.callingDio});
 

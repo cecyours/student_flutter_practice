@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:maulesh_flutter_practice/practice/dio_sqflite_provider/dio_calling.dart';
@@ -10,10 +11,15 @@ import 'package:maulesh_flutter_practice/topics/provider/provider.dart';
 import 'package:maulesh_flutter_practice/topics/theme_pratice/professional_theme.dart';
 import 'package:provider/provider.dart';
 
+import 'firebase_options.dart';
+
 void main() async {
   // final Fact = Store<UpdateValue>(reflectValue,
   //     initialState: UpdateValue.DefaultValue());
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await Hive.initFlutter();
   runApp(MyApp());
 }
@@ -32,7 +38,7 @@ class MyApp extends StatelessWidget {
             create: (_) => ProductProvider()),
         ChangeNotifierProvider<Provider1>(create: (_) => Provider1()),
         ChangeNotifierProvider<GetData>(
-            create: (_) => GetData(callingDio: CallingDio())),
+            create: (_) => GetData(callingDio: CallingDioOrFirebase())),
         // ChangeNotifierProvider<Provider1>(create: (_) => Provider1()),
       ],
       child: MaterialApp(

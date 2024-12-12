@@ -29,20 +29,34 @@ class _gooduiState extends State<Goodui> {
           return Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              FilledButton(onPressed: () {
-                provider.getDataFromApi();
-              }, child: Text("Get Data From Api")),
+              FilledButton(
+                  onPressed: () {
+                    loadDataFromFirebase();
+                  },
+                  child: Text("Load Fact From Firebase")),
+              FilledButton(
+                  onPressed: () {
+                    submitFactToFirebase();
+                  },
+                  child: Text("Submit Fact In Firebase")),
+              FilledButton(
+                  onPressed: () {
+                    provider.getDataFromApi();
+                  },
+                  child: Text("Get Data From Api")),
               FilledButton(
                   onPressed: () {
                     provider.storeItLocally();
-                  }, child: Text("Store Data In Sql Lite")),
+                  },
+                  child: Text("Store Data In Sql Lite")),
               FilledButton(
                   onPressed: () {
                     provider.showFromLocal();
-                  }, child: Text("Fetch Data From Sql Lite")),
+                  },
+                  child: Text("Fetch Data From Sql Lite")),
               FilledButton(
                   onPressed: () {
-                    DirectLoadDataFromApi();
+                    // DirectLoadDataFromApi();
                   },
                   child: Text("Direct Load Data From Api")),
               SizedBox(
@@ -70,13 +84,50 @@ class _gooduiState extends State<Goodui> {
     );
   }
 
-  void DirectLoadDataFromApi() async {
-    CallingDio callingDio = CallingDio();
+  // void DirectLoadDataFromApi() async {
+  //   CallingDioOrFirebase callingDio = CallingDioOrFirebase();
+  //   try {
+  //     model = await callingDio.loadFact();
+  //     setState(() {});
+  //   } catch (e) {
+  //     print('something went wrong');
+  //   }
+  // }
+
+  void DirectLoadDataFromFirebase() async {
+    CallingDioOrFirebase callingDio = CallingDioOrFirebase();
     try {
-      model = await callingDio.loadFact();
+      // model = await callingDio.loadFact();
       setState(() {});
     } catch (e) {
       print('something went wrong');
     }
+  }
+
+  void submitFactToFirebase() {
+    CallingDioOrFirebase callingFirebase = CallingDioOrFirebase();
+
+    FactModel factModel =
+        FactModel(fact: 'Maulesh is Greatedt Boy', factLength: 20);
+
+    try {
+      callingFirebase.submitFact(model: factModel);
+    } catch (e) {
+      print('error is $e');
+    }
+  }
+
+  void loadDataFromFirebase() async{
+    CallingDioOrFirebase callingFirebase = CallingDioOrFirebase();
+
+   try{
+     model = await callingFirebase.loadFactFromFirebase();
+    setState(() {
+
+    });
+   }catch(e){
+     print('ha bhai error aai gai');
+   }
+
   }
 }
