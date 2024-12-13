@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dio/dio.dart';
-import 'package:maulesh_flutter_practice/practice/dio_sqflite_provider/model.dart';
+
+import 'model.dart';
 
 class CallingDioOrFirebase {
   Dio dio = Dio();

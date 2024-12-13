@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:maulesh_flutter_practice/practice/dio_sqflite_provider/model.dart';
-import 'package:maulesh_flutter_practice/practice/dio_sqflite_provider/provider.dart';
+import 'package:maulesh_flutter_practice/practice/dio_sqflite_provider_firestore/provider.dart';
 import 'package:provider/provider.dart';
 
 import 'dio_calling.dart';
+import 'model.dart';
 
 class Goodui extends StatefulWidget {
   const Goodui({super.key});

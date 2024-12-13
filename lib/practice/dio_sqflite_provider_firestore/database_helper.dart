@@ -1,6 +1,8 @@
-import 'package:maulesh_flutter_practice/practice/dio_sqflite_provider/model.dart';
+
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
+
+import 'model.dart';
 
 class DatabaseHelper4 {
   static Database? _database;
