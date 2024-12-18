@@ -11,6 +11,8 @@ import 'package:maulesh_flutter_practice/topics/provider/provider.dart';
 import 'package:maulesh_flutter_practice/topics/theme_pratice/professional_theme.dart';
 import 'package:provider/provider.dart';
 
+import 'animation/animated_container.dart';
+import 'animation/animated_padding.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -47,7 +49,7 @@ class MyApp extends StatelessWidget {
         theme: theme,
         darkTheme: darkTheme,
         themeMode: ThemeMode.system,
-        home: FirebaseRealtimeDbUi(),
+        home: AnimatedPaddingAndAnimatedPositioned(),
       ),
     );
   }
