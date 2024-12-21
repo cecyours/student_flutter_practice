@@ -11,8 +11,12 @@ import 'package:maulesh_flutter_practice/topics/provider/provider.dart';
 import 'package:maulesh_flutter_practice/topics/theme_pratice/professional_theme.dart';
 import 'package:provider/provider.dart';
 
+import 'animation/advance_animation_loading.dart';
 import 'animation/animated_container.dart';
 import 'animation/animated_padding.dart';
+import 'animation/custom_painter/basic.dart';
+import 'animation/hero_animation.dart';
+import 'animation/myHeroAnimation.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -49,7 +53,7 @@ class MyApp extends StatelessWidget {
         theme: theme,
         darkTheme: darkTheme,
         themeMode: ThemeMode.system,
-        home: AnimatedPaddingAndAnimatedPositioned(),
+        home: BasicCustomPainter(),
       ),
     );
   }
