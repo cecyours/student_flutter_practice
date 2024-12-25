@@ -9,6 +9,7 @@ import 'package:maulesh_flutter_practice/topics/firebase_realtime_database/ui.da
 import 'package:maulesh_flutter_practice/topics/local_storage/sqflite/maulesh/ui_2.dart';
 import 'package:maulesh_flutter_practice/topics/provider/provider.dart';
 import 'package:maulesh_flutter_practice/topics/theme_pratice/professional_theme.dart';
+import 'package:maulesh_flutter_practice/topics/transition/basic_one.dart';
 import 'package:provider/provider.dart';
 
 import 'animation/advance_animation_loading.dart';
@@ -53,7 +54,7 @@ class MyApp extends StatelessWidget {
         theme: theme,
         darkTheme: darkTheme,
         themeMode: ThemeMode.system,
-        home: BasicCustomPainter(),
+        home: BasicOne(),
       ),
     );
   }
