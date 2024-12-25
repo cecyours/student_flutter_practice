@@ -50,14 +50,17 @@ class _AnimatedPaddingState
                     width: 100,
                     color: Colors.orange,
                   )),
-              AnimatedPadding(
-                  padding: EdgeInsets.only(bottom: paddingtop3),
-                  duration: Duration(seconds: 1),
-                  child: Container(
-                    height: 100,
-                    width: 100,
-                    color: Colors.orange,
-                  )),
+              Container(
+                color: Colors.pink,
+                child: AnimatedPadding(
+                    padding: EdgeInsets.only(bottom: paddingtop3),
+                    duration: Duration(seconds: 1),
+                    child: Container(
+                      height: 100,
+                      width: 100,
+                      color: Colors.orange,
+                    )),
+              ),
             ],
           ),
           // Container(
