@@ -6,6 +6,7 @@ import 'package:maulesh_flutter_practice/practice/dio_sqflite_provider_firestore
 import 'package:maulesh_flutter_practice/practice/dio_sqflite_provider_firestore/provider.dart';
 import 'package:maulesh_flutter_practice/practice/dio_sqflite_provider_firestore/ui.dart';
 import 'package:maulesh_flutter_practice/topics/app_pratice/provider/products_provider.dart';
+import 'package:maulesh_flutter_practice/topics/firebase/email_auth/splash.dart';
 import 'package:maulesh_flutter_practice/topics/firebase_realtime_database/ui.dart';
 import 'package:maulesh_flutter_practice/topics/local_storage/sqflite/maulesh/ui_2.dart';
 import 'package:maulesh_flutter_practice/topics/provider/provider.dart';
@@ -27,9 +28,9 @@ void main() async {
   //     initialState: UpdateValue.DefaultValue());
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
+    // options: DefaultFirebaseOptions.currentPlatform,
   );
-  await Hive.initFlutter();
+  // await Hive.initFlutter();
   runApp(MyApp());
 }
 
@@ -56,7 +57,7 @@ class MyApp extends StatelessWidget {
         theme: theme,
         darkTheme: darkTheme,
         themeMode: ThemeMode.system,
-        home: BasicLines(),
+        home: Splash(),
       ),
     );
   }
