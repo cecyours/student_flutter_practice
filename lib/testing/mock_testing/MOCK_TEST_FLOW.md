@@ -4,7 +4,6 @@
       build_runner
 
     add @GenerateMocks([Class name]) in you test file
-
     
 
 
