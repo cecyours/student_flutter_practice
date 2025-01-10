@@ -1,30 +1,20 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:maulesh_flutter_practice/main.dart';
+import 'package:maulesh_flutter_practice/testing/widget_testing/widget_test_1.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('Counter increments when tapped', (WidgetTester tester) async {
+    // Build the app and trigger a frame
+    await tester.pumpWidget(WidgetTest1());
 
-    // Verify that our counter starts at 0.
+    // Verify that the initial value is 0
     expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    // Tap the widget
+    await tester.tap(find.byType(GestureDetector));
+    await tester.pump(); // Rebuild the widget after the tap
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
+    // Verify that the value has incremented
     expect(find.text('1'), findsOneWidget);
   });
 }
