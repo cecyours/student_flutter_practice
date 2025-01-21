@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_flutter_practice/testing/widget_testing/counter.dart';
 
 import 'counter.dart';
 
